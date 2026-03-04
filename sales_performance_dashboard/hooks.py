@@ -244,4 +244,5 @@ scheduler_events = {
 # Installation
 # ------------
 
-after_install = "sales_performance_dashboard.sales_performance_dashboard.setup.create_number_cards.create_all_cards"
+after_install = "sales_performance_dashboard.install.after_install"
+after_migrate = ["sales_performance_dashboard.install.after_migrate"]

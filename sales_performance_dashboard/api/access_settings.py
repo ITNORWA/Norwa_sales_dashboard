@@ -1,4 +1,5 @@
 import frappe
+import json
 
 DEFAULTS = {
     "psd_sales_user": 1,
@@ -42,6 +43,41 @@ ROLE_FIELDS = {
 ALLOWED_DASHBOARD_ROLES = ("Sales User", "Sales Manager", "System Manager", "Administrator")
 
 
+def _sanitize_workspace_links(ws):
+    """Drop stale custom block references so workspace save doesn't fail on missing links."""
+    valid_blocks = set(frappe.get_all("Custom HTML Block", pluck="name"))
+
+    ws.set(
+        "custom_blocks",
+        [row for row in (ws.custom_blocks or []) if row.custom_block_name in valid_blocks],
+    )
+
+    if not ws.content:
+        return
+
+    try:
+        rows = json.loads(ws.content)
+    except Exception:
+        return
+
+    changed = False
+    cleaned = []
+    for row in rows:
+        if row.get("type") != "custom_block":
+            cleaned.append(row)
+            continue
+
+        block_name = (row.get("data") or {}).get("custom_block_name")
+        if block_name and block_name in valid_blocks:
+            cleaned.append(row)
+            continue
+
+        changed = True
+
+    if changed:
+        ws.content = json.dumps(cleaned)
+
+
 def get_access_settings():
     settings = dict(DEFAULTS)
     if not frappe.db.exists("DocType", "Sales Dashboard Access Settings"):
@@ -72,6 +108,11 @@ def apply_workspace_roles_from_settings(settings_doc=None):
             continue
 
         ws = frappe.get_doc("Workspace", workspace_name)
+        _sanitize_workspace_links(ws)
+        # Workspaces can temporarily contain stale links during upgrades.
+        # We still need role updates to apply without being blocked by link validation.
+        ws.flags.ignore_links = True
+        ws.flags.ignore_validate = True
         ws.public = 1
         ws.for_user = ""
         ws.is_hidden = 0

@@ -255,24 +255,15 @@ def create_personal_dashboard():
 def sync_personal_workspace():
     """Sync the Personal Sales Dashboard workspace from its JSON definition."""
     ensure_personal_dashboard_charts()
-    possible_paths = [
-        frappe.get_app_path(
-            "sales_performance_dashboard",
-            "sales_performance_dashboard",
-            "workspace",
-            "personal_sales_dashboard",
-            "personal_sales_dashboard.json",
-        ),
-        frappe.get_app_path(
-            "sales_performance_dashboard",
-            "workspace",
-            "personal_sales_dashboard",
-            "personal_sales_dashboard.json",
-        ),
-    ]
+    workspace_path = frappe.get_app_path(
+        "sales_performance_dashboard",
+        "sales_performance_dashboard",
+        "workspace",
+        "personal_sales_dashboard",
+        "personal_sales_dashboard.json",
+    )
 
-    workspace_path = next((p for p in possible_paths if os.path.exists(p)), None)
-    if not workspace_path:
+    if not os.path.exists(workspace_path):
         raise FileNotFoundError("Personal Sales Dashboard workspace JSON not found.")
 
     with open(workspace_path, "r", encoding="utf-8") as handle:
@@ -313,24 +304,15 @@ def sync_personal_workspace():
 def sync_department_workspace():
     """Sync the Department Sales Dashboard workspace from JSON."""
     ensure_department_dashboard_assets()
-    possible_paths = [
-        frappe.get_app_path(
-            "sales_performance_dashboard",
-            "sales_performance_dashboard",
-            "workspace",
-            "department_sales_dashboard",
-            "department_sales_dashboard.json",
-        ),
-        frappe.get_app_path(
-            "sales_performance_dashboard",
-            "workspace",
-            "department_sales_dashboard",
-            "department_sales_dashboard.json",
-        ),
-    ]
+    workspace_path = frappe.get_app_path(
+        "sales_performance_dashboard",
+        "sales_performance_dashboard",
+        "workspace",
+        "department_sales_dashboard",
+        "department_sales_dashboard.json",
+    )
 
-    workspace_path = next((p for p in possible_paths if os.path.exists(p)), None)
-    if not workspace_path:
+    if not os.path.exists(workspace_path):
         raise FileNotFoundError("Department Sales Dashboard workspace JSON not found.")
 
     with open(workspace_path, "r", encoding="utf-8") as handle:
@@ -352,24 +334,15 @@ def sync_department_workspace():
 def sync_company_workspace():
     """Sync the Company Sales Dashboard workspace from JSON."""
     ensure_company_dashboard_assets()
-    possible_paths = [
-        frappe.get_app_path(
-            "sales_performance_dashboard",
-            "sales_performance_dashboard",
-            "workspace",
-            "company_sales_dashboard",
-            "company_sales_dashboard.json",
-        ),
-        frappe.get_app_path(
-            "sales_performance_dashboard",
-            "workspace",
-            "company_sales_dashboard",
-            "company_sales_dashboard.json",
-        ),
-    ]
+    workspace_path = frappe.get_app_path(
+        "sales_performance_dashboard",
+        "sales_performance_dashboard",
+        "workspace",
+        "company_sales_dashboard",
+        "company_sales_dashboard.json",
+    )
 
-    workspace_path = next((p for p in possible_paths if os.path.exists(p)), None)
-    if not workspace_path:
+    if not os.path.exists(workspace_path):
         raise FileNotFoundError("Company Sales Dashboard workspace JSON not found.")
 
     with open(workspace_path, "r", encoding="utf-8") as handle:
@@ -440,3 +413,14 @@ def debug_personal_funnel_block():
         print(f"{name} has positionTooltip:", "positionTooltip" in script)
         print(f"{name} has requestAnimationFrame:", "requestAnimationFrame" in script)
         print(f"{name} script snippet:", script.replace("\\n", " ")[:240])
+
+
+def sync_all_dashboards():
+    """Idempotent full sync for cards, assets and workspaces."""
+    from sales_performance_dashboard.sales_performance_dashboard.setup.create_number_cards import create_all_cards
+
+    create_all_cards()
+    sync_personal_workspace()
+    sync_department_workspace()
+    sync_company_workspace()
+    print("✅ Sales dashboard full sync complete.")

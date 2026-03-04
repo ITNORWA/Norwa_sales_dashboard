@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"csd-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Company Sales Dashboard</span>\",\"col\":12}},{\"id\":\"csd-sub\",\"type\":\"paragraph\",\"data\":{\"text\":\"Company-wide sales performance across all departments with one global filter bar.\",\"col\":12}},{\"id\":\"csd-global-filters\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Company Dashboard Filters\",\"col\":12}},{\"id\":\"csd-pipeline-overview\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Company Pipeline Overview\",\"col\":12}},{\"id\":\"csd-project-status-finance\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Company Project Status & Finance\",\"col\":12}},{\"id\":\"csd-revenue-waterfall\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Company Revenue Waterfall\",\"col\":12}},{\"id\":\"csd-gross-margin-trend\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Company Gross Margin Trend\",\"col\":12}},{\"id\":\"csd-payment-delay-cost\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Company Payment Delay Cost\",\"col\":12}},{\"id\":\"csd-revenue-by-source\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Company Revenue by Source\",\"col\":6}},{\"id\":\"csd-weighted-coverage\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Company Weighted Pipeline Coverage\",\"col\":6}},{\"id\":\"csd-deal-conversion-rate\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Company Deal Conversion Rate\",\"col\":12}},{\"id\":\"csd-target-slippage\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Company Target Slippage\",\"col\":12}}]",
- "creation": "2026-02-27 11:26:28.858900",
+ "creation": "2026-03-04 10:36:04.944935",
  "custom_blocks": [
   {
    "custom_block_name": "Company Dashboard Filters",
@@ -54,7 +54,7 @@
  "is_hidden": 0,
  "label": "Company Sales Dashboard",
  "links": [],
- "modified": "2026-02-28 09:40:27.240469",
+ "modified": "2026-03-04 10:42:27.365242",
  "modified_by": "Administrator",
  "module": "Sales Performance Dashboard",
  "name": "Company Sales Dashboard",

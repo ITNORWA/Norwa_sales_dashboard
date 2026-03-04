@@ -1,43 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"dsd-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Department Sales Dashboard</span>\",\"col\":12}},{\"id\":\"dsd-sub\",\"type\":\"paragraph\",\"data\":{\"text\":\"Department-level sales trend across all people in the selected department.\",\"col\":12}},{\"id\":\"dsd-global-filters\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department Dashboard Filters\",\"col\":12}},{\"id\":\"dsd-kpi-revenue\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department KPI Revenue Customers\",\"col\":12}},{\"id\":\"dsd-target-slippage\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department Target Slippage\",\"col\":12}},{\"id\":\"dsd-kpi-customers\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department KPI Customers\",\"col\":12}},{\"id\":\"dsd-trend\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department Sales Order Trend Block\",\"col\":12}},{\"id\":\"dsd-kpi-deals\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department KPI Deals Pipeline\",\"col\":12}},{\"id\":\"dsd-pipeline-coverage\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department Weighted Pipeline Coverage\",\"col\":12}},{\"id\":\"dsd-forecast\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department Forecasted Revenue Block\",\"col\":12}},{\"id\":\"dsd-gross-margin\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department Gross Margin Trend\",\"col\":12}},{\"id\":\"dsd-discount-leakage\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department Discount Leakage\",\"col\":12}},{\"id\":\"dsd-payment-delay-cost\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department Payment Delay Cost\",\"col\":12}},{\"id\":\"dsd-funnel\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department Sales Funnel\",\"col\":12}},{\"id\":\"dsd-top-customers\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department Top Customers Table\",\"col\":12}},{\"id\":\"dsd-project-pipeline\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department Project Pipeline\",\"col\":12}},{\"id\":\"dsd-project-delivery-health\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department Project Delivery Health\",\"col\":12}},{\"id\":\"dsd-targets-header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Targets</b></span>\",\"col\":12}},{\"id\":\"dsd-target-link\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Department Sales Targets Shortcut\",\"col\":3}}]",
- "doctype": "Workspace",
- "for_user": "",
- "icon": "branch",
- "indicator_color": "green",
- "is_hidden": 0,
- "label": "Department Sales Dashboard",
- "links": [],
- "module": "Sales Performance Dashboard",
- "name": "Department Sales Dashboard",
- "number_cards": [],
- "parent_page": "",
- "public": 1,
- "quick_lists": [],
- "restrict_to_domain": "",
- "roles": [
-  {
-   "role": "Sales User"
-  },
-  {
-   "role": "Sales Manager"
-  },
-  {
-   "role": "System Manager"
-  },
-  {
-   "role": "Administrator"
-  }
- ],
- "sequence_id": 51.0,
- "shortcuts": [
-  {
-   "doc_view": "",
-   "label": "Sales Targets",
-   "link_to": "Sales Targets",
-   "type": "DocType"
-  }
- ],
+ "creation": "2026-03-04 10:36:03.344448",
  "custom_blocks": [
   {
    "custom_block_name": "Department Dashboard Filters",
@@ -96,12 +60,55 @@
    "label": "Department Project Pipeline"
   },
   {
-  "custom_block_name": "Department Project Delivery Health",
-  "label": "Department Project Delivery Health"
+   "custom_block_name": "Department Project Delivery Health",
+   "label": "Department Project Delivery Health"
   },
   {
    "custom_block_name": "Department Sales Targets Shortcut",
    "label": "Department Sales Targets Shortcut"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "branch",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Department Sales Dashboard",
+ "links": [],
+ "modified": "2026-03-04 10:42:27.283435",
+ "modified_by": "Administrator",
+ "module": "Sales Performance Dashboard",
+ "name": "Department Sales Dashboard",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Administrator"
+  }
+ ],
+ "sequence_id": 51.0,
+ "shortcuts": [
+  {
+   "doc_view": "",
+   "label": "Sales Targets",
+   "link_to": "Sales Targets",
+   "type": "DocType"
   }
  ],
  "title": "Department Sales Dashboard"
